@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen>{
             'Hey! Welcome Back',
             style: TextStyle(fontWeight: FontWeight.bold,
             fontSize: 36,
+            
              ),
              ),
           const SizedBox(height: 50),
