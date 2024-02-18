@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solution_challenge_2024/screens/sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -38,7 +39,13 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) =>
+                        SigninScreen()));
+                  },
                   style: OutlinedButton.styleFrom(
                     fixedSize: const Size(150, 60),
                     foregroundColor: Colors.white,
