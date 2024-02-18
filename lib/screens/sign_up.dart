@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solution_challenge_2024/screens/sign_up.dart';
 import 'package:gdsc_solution_challenge_2024/widgets/round_button.dart';
 
-class SigninScreen extends StatefulWidget{
-  const SigninScreen({Key?key}):super(key:key);
+class SignupScreen extends StatefulWidget{
+  const SignupScreen({Key?key}):super(key:key);
 
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen>{
+class _SignupScreenState extends State<SignupScreen>{
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -25,7 +24,7 @@ class _SigninScreenState extends State<SigninScreen>{
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Sign In'),
+        title: Text('Sign Up'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20  ),
@@ -98,10 +97,7 @@ class _SigninScreenState extends State<SigninScreen>{
               children: [
                 Text('Dont have an account?'),
                 TextButton(onPressed: (){
-                  Navigator.push(context,
-                   MaterialPageRoute(
-                    builder: (context) => SignupScreen())
-                    ); 
+
                 },
                 child: Text('Sign Up'))
               ],
