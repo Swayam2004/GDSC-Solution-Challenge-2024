@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: OutlinedButton.styleFrom(
                     fixedSize: const Size(150, 60),
                     foregroundColor: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 189, 189, 189),
+                    backgroundColor: Color.fromARGB(255, 91, 2, 92),
                     side: const BorderSide(width: 1.0, color: Colors.black),
                   ),
                   child: const Text(

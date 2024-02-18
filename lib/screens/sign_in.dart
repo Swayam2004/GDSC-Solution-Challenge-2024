@@ -24,7 +24,7 @@ class _SigninScreenState extends State<SigninScreen>{
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Sign in'),
+        title: Text(''),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20  ),
@@ -50,8 +50,8 @@ class _SigninScreenState extends State<SigninScreen>{
               obscureText: true,
               decoration:const InputDecoration(
                 hintText: 'Password',
+                helperText: 'enter your password',
                 
-                prefixIcon: Icon(Icons.alternate_email)
               ),
             ),
 
