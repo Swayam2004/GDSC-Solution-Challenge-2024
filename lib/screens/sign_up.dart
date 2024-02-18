@@ -7,6 +7,12 @@ class SignupScreen extends StatefulWidget{
   @override
   State<SignupScreen> createState() => _SignupScreenState();
 }
+class SigninScreen extends StatefulWidget{
+  const SigninScreen({Key?key}):super(key:key);
+
+  @override
+  State<SigninScreen> createState() => _SigninScreenState();
+}
 
 class _SignupScreenState extends State<SignupScreen>{
   final _formKey = GlobalKey<FormState>();
@@ -83,7 +89,8 @@ class _SignupScreenState extends State<SignupScreen>{
              const SizedBox(height:50 ,),
            
             RoundButton(
-              title : 'Sign in',
+              title : 'Sign up',
+              
               onTap:(){
                 if(_formKey.currentState!.validate()){
 
@@ -95,11 +102,14 @@ class _SignupScreenState extends State<SignupScreen>{
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Dont have an account?'),
+                Text('Already have an account?'),
                 TextButton(onPressed: (){
-
+                  Navigator.push(context,
+                   MaterialPageRoute(
+                    builder: (context) => SigninScreen())
+                    ); 
                 },
-                child: Text('Sign Up'))
+                child: Text('Sign In'))
               ],
             )
           ],
