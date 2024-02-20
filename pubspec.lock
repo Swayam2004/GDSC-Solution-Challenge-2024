@@ -191,11 +191,7 @@ packages:
       sha256: c1b2e9b5ea78c45e1a0788d29606ba27dc5f71f019f32ca5140f61ef071838cf
       url: "https://pub.dev"
     source: hosted
-<<<<<<< Updated upstream
-    version: "0.6.7"
-=======
     version: "0.7.1"
->>>>>>> Stashed changes
   leak_tracker:
     dependency: transitive
     description:
@@ -260,8 +256,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
-<<<<<<< Updated upstream
-=======
   path_provider:
     dependency: transitive
     description:
@@ -310,7 +304,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
->>>>>>> Stashed changes
   petitparser:
     dependency: transitive
     description:
@@ -421,15 +414,6 @@ packages:
     source: hosted
     version: "2.1.4"
   vm_service:
-<<<<<<< Updated upstream
-    dependency: transitive
-    description:
-      name: vm_service
-      sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
-      url: "https://pub.dev"
-    source: hosted
-    version: "13.0.0"
-=======
     dependency: transitive
     description:
       name: vm_service
@@ -461,7 +445,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
->>>>>>> Stashed changes
   xml:
     dependency: transitive
     description:

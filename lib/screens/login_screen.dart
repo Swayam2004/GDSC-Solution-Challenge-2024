@@ -11,18 +11,17 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "assets/logos/recycle.png",
-                  height: 100,
-                  width: 100,
+                  "assets/logos/new_recycle_logo_original.png",
+                  height: 60,
+                  width: 60,
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 10.0, right: 10.0),
@@ -36,55 +35,51 @@ class _LoginScreenState extends State<LoginScreen> {
                 )
               ],
             ),
-            const Column(
+            Column(
               children: [
-                Text(
-                  "Hello, Welcome to our app",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Lorem ipsum dolor sit amet consectetur. Dui quam ut dictum at odio ",
-                  style: TextStyle(
-                    fontSize: 25,
+                Container(
+                    margin: const EdgeInsets.only(bottom: 50.0),
+                    child:
+                        Image.asset('assets/images/recycle_illustration.jpg')),
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome to Reeco",
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        "This app will help you in finding how to recycle/reuse your everyday items",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-            Image.asset('assets/images/undraw_takeout_boxes_ap54.png'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: const Size(150, 60),
-                    foregroundColor: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 189, 189, 189),
-                    side: const BorderSide(width: 1.0, color: Colors.black),
-                  ),
-                  child: const Text(
-                    'Next',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(top: 40.0),
+              child: OutlinedButton(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                  fixedSize: const Size(312, 60),
+                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xffFC9A32),
                 ),
-                // OutlinedButton(
-                //   onPressed: () {},
-                //   style: OutlinedButton.styleFrom(
-                //     fixedSize: const Size(150, 60),
-                //     foregroundColor: Colors.black,
-                //     backgroundColor: const Color.fromARGB(255, 210, 210, 210),
-                //     side: const BorderSide(width: 1.0, color: Colors.black),
-                //   ),
-                //   child: const Text(
-                //     'Sign Up',
-                //     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                //   ),
-                // ),
-              ],
-            )
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ],
         ),
       ),
