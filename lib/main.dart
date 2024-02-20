@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gdsc_solution_challenge_2024/screens/login_screen.dart';
 
 void main() {
@@ -10,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      theme: ThemeData(
+          textTheme: GoogleFonts.interTextTheme(
+        Theme.of(context).textTheme,
+      )),
+      home: const LoginScreen(),
     );
   }
 }
