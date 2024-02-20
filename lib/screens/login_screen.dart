@@ -16,6 +16,26 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/logos/recycle.png",
+                  height: 100,
+                  width: 100,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                  child: Text(
+                    "Recco",
+                    style: TextStyle(
+                      fontSize: 33,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                )
+              ],
+            ),
             const Column(
               children: [
                 Text(
