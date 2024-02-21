@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solution_challenge_2024/screens/app_info_screen.dart';
 import 'package:gdsc_solution_challenge_2024/screens/sign_in.dart';
-import 'package:gdsc_solution_challenge_2024/widgets/round_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -33,7 +33,16 @@ class _SignupScreenState extends State<SignupScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const AppInfoScreen(),
+              ),
+            );
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -228,39 +237,48 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Icon(
-                      size: 72,
-                      Icons.facebook,
-                      color: Colors.blue,
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15.0),
+                      child: Icon(
+                        size: 72,
+                        Icons.facebook,
+                        color: Colors.blue,
+                      ),
                     ),
-                    Icon(
-                      size: 72,
-                      Icons.reddit,
-                      color: Colors.orange.shade800,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Icon(
+                        size: 72,
+                        Icons.reddit,
+                        color: Colors.orange.shade800,
+                      ),
                     ),
-                    const Icon(
-                      size: 72,
-                      Icons.apple,
-                      color: Colors.black,
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15.0),
+                      child: Icon(
+                        size: 72,
+                        Icons.apple,
+                        color: Colors.black,
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     const Text('Already have an account?'),
-            //     TextButton(
-            //         onPressed: () {
-            //           Navigator.push(context,
-            //               MaterialPageRoute(builder: (context) {
-            //             return const SigninScreen();
-            //           }));
-            //         },
-            //         child: const Text('Sign In'))
-            //   ],
-            // )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Already have an account?'),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SigninScreen();
+                      }));
+                    },
+                    child: const Text('Sign In'))
+              ],
+            )
           ],
         ),
       ),

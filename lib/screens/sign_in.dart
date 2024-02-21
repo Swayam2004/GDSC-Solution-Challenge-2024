@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gdsc_solution_challenge_2024/screens/app_info_screen.dart';
 import 'package:gdsc_solution_challenge_2024/screens/sign_up.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -33,7 +34,16 @@ class _SigninScreenState extends State<SigninScreen> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          leading: const Icon(Icons.arrow_back),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const AppInfoScreen(),
+                ),
+              );
+            },
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -183,20 +193,29 @@ class _SigninScreenState extends State<SigninScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Icon(
-                        size: 72,
-                        Icons.facebook,
-                        color: Colors.blue,
+                      const Padding(
+                        padding: EdgeInsets.only(top: 15.0),
+                        child: Icon(
+                          size: 72,
+                          Icons.facebook,
+                          color: Colors.blue,
+                        ),
                       ),
-                      Icon(
-                        size: 72,
-                        Icons.reddit,
-                        color: Colors.orange.shade800,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Icon(
+                          size: 72,
+                          Icons.reddit,
+                          color: Colors.orange.shade800,
+                        ),
                       ),
-                      const Icon(
-                        size: 72,
-                        Icons.apple,
-                        color: Colors.black,
+                      const Padding(
+                        padding: EdgeInsets.only(top: 15.0),
+                        child: Icon(
+                          size: 72,
+                          Icons.apple,
+                          color: Colors.black,
+                        ),
                       ),
                     ],
                   ),

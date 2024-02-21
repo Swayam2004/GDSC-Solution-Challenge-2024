@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_solution_challenge_2024/screens/app_info_screen.dart';
-import 'package:gdsc_solution_challenge_2024/screens/sign_in.dart';
-import 'package:gdsc_solution_challenge_2024/screens/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
