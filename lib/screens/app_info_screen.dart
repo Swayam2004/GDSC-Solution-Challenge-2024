@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_solution_challenge_2024/screens/sign_in.dart';
 
 class AppInfoScreen extends StatefulWidget {
   const AppInfoScreen({super.key});
@@ -68,7 +69,6 @@ class _AppInfoScreenState extends State<AppInfoScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 40.0),
               child: OutlinedButton(
-                onPressed: () {},
                 style: OutlinedButton.styleFrom(
                   fixedSize: const Size(312, 60),
                   foregroundColor: Colors.white,
@@ -78,6 +78,13 @@ class _AppInfoScreenState extends State<AppInfoScreen> {
                   'Get Started',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SigninScreen(),
+                    ),
+                  );
+                },
               ),
             ),
           ],
