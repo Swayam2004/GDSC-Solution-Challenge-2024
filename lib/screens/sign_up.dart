@@ -192,7 +192,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 SizedBox(
                   height: 48.0,
-                  width: 148.0,
+                  width: 160.0,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         backgroundColor: const Color(0xffFC9A32),
