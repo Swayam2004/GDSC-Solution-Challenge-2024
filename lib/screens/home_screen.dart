@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   List<String> items = [
     "My Badges",
     "My Achievements",
@@ -390,7 +390,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     //     },
     //   ),
     // );
-
+    
     return SafeArea(
       child: SingleChildScrollView(
         child: Center(

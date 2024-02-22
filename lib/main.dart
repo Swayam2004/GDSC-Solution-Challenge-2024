@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solution_challenge_2024/screens/app_info_screen.dart';
+import 'package:gdsc_solution_challenge_2024/screens/screen_wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.interTextTheme(
         Theme.of(context).textTheme,
       )),
-      home: const AppInfoScreen(),
+      home: const ScreenWrapper(),
     );
   }
 }
