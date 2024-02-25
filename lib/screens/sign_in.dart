@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gdsc_solution_challenge_2024/screens/app_info_screen.dart';
+import 'package:gdsc_solution_challenge_2024/screens/screen_wrapper.dart';
 import 'package:gdsc_solution_challenge_2024/screens/sign_up.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -158,7 +159,16 @@ class _SigninScreenState extends State<SigninScreen> {
                             fontWeight: FontWeight.bold, fontSize: 16.0),
                       ),
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) {
+                                return const ScreenWrapper();
+                              }),
+                            ),
+                          );
+                        }
                       },
                     ),
                   ),
