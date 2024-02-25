@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gdsc_solution_challenge_2024/screens/history.dart';
+import 'package:gdsc_solution_challenge_2024/screens/history_screen.dart';
 import 'package:gdsc_solution_challenge_2024/screens/home_screen.dart';
 import 'package:gdsc_solution_challenge_2024/screens/profile_screen.dart';
 import 'package:gdsc_solution_challenge_2024/screens/recyoclopedia.dart';
 import 'package:gdsc_solution_challenge_2024/screens/scan_screen.dart';
+import 'package:gdsc_solution_challenge_2024/screens/settings_screen.dart';
 import 'package:gdsc_solution_challenge_2024/utils/constants/colors.dart';
 
 class ScreenWrapper extends StatefulWidget {
@@ -44,29 +45,83 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: (_bottomNavBarCurrentIndex == 2)
-          ? AppBar()
-          : AppBar(
-              toolbarHeight: 100.0,
-              title: Container(
-                margin: const EdgeInsets.only(left: 10.0),
-                child: Text(
-                  _screenNames[_bottomNavBarCurrentIndex],
-                  style: const TextStyle(
-                      fontSize: 23, fontWeight: FontWeight.w600),
-                ),
-              ),
-              actions: [
-                Container(
-                  margin: const EdgeInsets.only(right: 20.0),
-                  child: const Icon(
-                    size: 36,
-                    Icons.settings,
-                    color: Color(0xffFC9A32),
+          ? null
+          : (_bottomNavBarCurrentIndex == 0)
+              ? AppBar(
+                  toolbarHeight: 150.0,
+                  title: SizedBox(
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(75),
+                          child: SizedBox(
+                            width: 96,
+                            height: 96,
+                            child: Image.asset(
+                                "assets/logos/profile_logo_image.jpg"),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            "Hi,\nAjay Gouda",
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: IconButton(
+                        icon: const Icon(
+                          size: 36,
+                          Icons.settings,
+                          color: Color(0xffFC9A32),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const SettingsScreen();
+                          }));
+                        },
+                      ),
+                    ),
+                  ],
+                  backgroundColor: const Color(0xff167E6B),
                 )
-              ],
-              backgroundColor: const Color(0xff167E6B),
-            ),
+              : AppBar(
+                  toolbarHeight: 100.0,
+                  title: Container(
+                    margin: const EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      _screenNames[_bottomNavBarCurrentIndex],
+                      style: const TextStyle(
+                          fontSize: 23, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: IconButton(
+                        icon: const Icon(
+                          size: 36,
+                          Icons.settings,
+                          color: Color(0xffFC9A32),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const SettingsScreen();
+                          }));
+                        },
+                      ),
+                    ),
+                  ],
+                  backgroundColor: const Color(0xff167E6B),
+                ),
       body: _children[_bottomNavBarCurrentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 10.0,
@@ -79,12 +134,18 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Colors.black, width: 1.0, style: BorderStyle.solid),
+                    color: (_bottomNavBarCurrentIndex == 0)
+                        ? AppColors.ACCENT_COLOR
+                        : Colors.black,
+                    width: 1.0,
+                    style: BorderStyle.solid),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.home,
-                color: Colors.black,
+                color: (_bottomNavBarCurrentIndex == 0)
+                    ? AppColors.ACCENT_COLOR
+                    : Colors.black,
               ),
             ),
             label: "Home",
@@ -96,12 +157,18 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Colors.black, width: 1.0, style: BorderStyle.solid),
+                    color: (_bottomNavBarCurrentIndex == 1)
+                        ? AppColors.ACCENT_COLOR
+                        : Colors.black,
+                    width: 1.0,
+                    style: BorderStyle.solid),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.menu_book_rounded,
-                color: Colors.black,
+                color: (_bottomNavBarCurrentIndex == 1)
+                    ? AppColors.ACCENT_COLOR
+                    : Colors.black,
               ),
             ),
             label: "Recyclopedia",
@@ -113,12 +180,18 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Colors.black, width: 1.0, style: BorderStyle.solid),
+                    color: (_bottomNavBarCurrentIndex == 2)
+                        ? AppColors.ACCENT_COLOR
+                        : Colors.black,
+                    width: 1.0,
+                    style: BorderStyle.solid),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.search_rounded,
-                color: Colors.black,
+                color: (_bottomNavBarCurrentIndex == 2)
+                    ? AppColors.ACCENT_COLOR
+                    : Colors.black,
               ),
             ),
             label: "Scan",
@@ -130,12 +203,18 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Colors.black, width: 1.0, style: BorderStyle.solid),
+                    color: (_bottomNavBarCurrentIndex == 3)
+                        ? AppColors.ACCENT_COLOR
+                        : Colors.black,
+                    width: 1.0,
+                    style: BorderStyle.solid),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.history,
-                color: Colors.black,
+                color: (_bottomNavBarCurrentIndex == 3)
+                    ? AppColors.ACCENT_COLOR
+                    : Colors.black,
               ),
             ),
             label: "History",
@@ -147,12 +226,18 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                    color: Colors.black, width: 1.0, style: BorderStyle.solid),
+                    color: (_bottomNavBarCurrentIndex == 4)
+                        ? AppColors.ACCENT_COLOR
+                        : Colors.black,
+                    width: 1.0,
+                    style: BorderStyle.solid),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.person,
-                color: Colors.black,
+                color: (_bottomNavBarCurrentIndex == 4)
+                    ? AppColors.ACCENT_COLOR
+                    : Colors.black,
               ),
             ),
             label: "Profile",
