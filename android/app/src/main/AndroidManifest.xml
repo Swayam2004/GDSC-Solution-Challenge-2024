@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="gdsc_solution_challenge_2024"
-        android:name="Reeco"
-        android:icon="@assets/logos/new_recycle_logo_original.png">
+        android:label="Reeco"
+        android:name="${applicationName}"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
