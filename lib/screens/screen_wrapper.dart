@@ -48,6 +48,7 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
           ? null
           : (_bottomNavBarCurrentIndex == 0)
               ? AppBar(
+                  automaticallyImplyLeading: false,
                   toolbarHeight: 150.0,
                   title: SizedBox(
                     child: Row(
@@ -93,6 +94,7 @@ class _ScreenWrapperState extends State<ScreenWrapper> {
                   backgroundColor: const Color(0xff167E6B),
                 )
               : AppBar(
+                  automaticallyImplyLeading: false,
                   toolbarHeight: 100.0,
                   title: Container(
                     margin: const EdgeInsets.only(left: 10.0),

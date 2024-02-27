@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 import 'package:gdsc_solution_challenge_2024/utils/constants/colors.dart';
+import 'package:gdsc_solution_challenge_2024/widgets/home_page_info_container.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +14,30 @@ class _HomeScreenState extends State<HomeScreen> {
   List<String> items = [
     "My Badges",
     "My Achievements",
+  ];
+
+  List<String> blogAndArticles = [
+    "Paper",
+    "Plants",
+    "Soil",
+  ];
+
+  List<String> blogAndArticlesLinks = [
+    "assets/images/papers.jpg",
+    "assets/images/plants.jpg",
+    "assets/images/soil.jpg",
+  ];
+
+  List<String> collectionPoints = [
+    "Point A",
+    "Point B",
+    "Point C",
+  ];
+
+  List<String> collectionPointsLinks = [
+    "assets/images/location_1.jpg",
+    "assets/images/location_2.jpg",
+    "assets/images/location_3.jpg",
   ];
 
   int current = 0;
@@ -36,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    height: 148,
+                    height: 200,
                     width: 450,
                     decoration: BoxDecoration(
                       color: AppColors.PRIMARY_COLOR,
@@ -45,8 +71,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 1.0,
                           style: BorderStyle.solid),
                     ),
-                    child: const Row(
-                      children: [],
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: blogAndArticles.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return HomePageInfoContainer(
+                          infoName: blogAndArticles[index],
+                          infoImage: blogAndArticlesLinks[index],
+                        );
+                      },
                     ),
                   )
                 ],
@@ -66,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    height: 148,
+                    height: 200,
                     width: 450,
                     decoration: BoxDecoration(
                       color: AppColors.PRIMARY_COLOR,
@@ -75,15 +108,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 1.0,
                           style: BorderStyle.solid),
                     ),
-                    child: const Row(
-                      children: [],
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: blogAndArticles.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return HomePageInfoContainer(
+                          infoName: collectionPoints[index],
+                          infoImage: collectionPointsLinks[index],
+                        );
+                      },
                     ),
                   )
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 5.0, left: 20.0),
+              padding: const EdgeInsets.only(
+                  top: 5.0, left: 20.0, right: 20.0, bottom: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

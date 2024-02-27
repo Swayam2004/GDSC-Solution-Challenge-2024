@@ -68,7 +68,7 @@ class _AppInfoScreenState extends State<AppInfoScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 40.0),
-              child: OutlinedButton(
+              child: TextButton(
                 style: OutlinedButton.styleFrom(
                   fixedSize: const Size(312, 60),
                   foregroundColor: Colors.white,
