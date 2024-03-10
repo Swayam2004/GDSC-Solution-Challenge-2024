@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
 import 'package:gdsc_solution_challenge_2024/utils/constants/colors.dart';
 import 'package:gdsc_solution_challenge_2024/widgets/home_page_info_container.dart';
+import 'package:gdsc_solution_challenge_2024/widgets/home_page_streak_calender.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Container(
-                    height: 148,
+                    height: 400,
                     width: 450,
                     decoration: BoxDecoration(
                       color: AppColors.PRIMARY_COLOR,
@@ -146,9 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 1.0,
                           style: BorderStyle.solid),
                     ),
-                    child: const Row(
-                      children: [],
-                    ),
+                    child: const StreakCalendar(),
                   )
                 ],
               ),
